@@ -31,10 +31,11 @@ public class BombController : MonoBehaviour
     private IEnumerator Countdown()
     {
         yield return new WaitForSeconds(timeCountdown);
-        explosion = true;
+        
         GetComponent<CircleCollider2D>().enabled = true;
-        yield return new WaitForSeconds(0.01f);
+        yield return new WaitForSeconds(0.1f);
         GetComponent<CircleCollider2D>().enabled = false;
+        explosion = true;
         Destroy(gameObject,0.1f);
         
     }
